@@ -7,7 +7,7 @@
         <img src="/img/logo.svg" alt="">
         <ul>
             <li><RouterLink to="/" active-class="active">Home Page</RouterLink></li>
-            <li><a href="">Products</a></li>
+            <li><RouterLink to="/items" active-class="active">Products</RouterLink></li>
             <li><RouterLink to="/shipping" active-class="active">Shipping & Delivery</RouterLink></li>
             <li><RouterLink to="/about" active-class="active">About Us</RouterLink></li>
             <li><img src="/img/purchase.svg" alt=""></li>
