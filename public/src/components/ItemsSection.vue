@@ -5,8 +5,8 @@
             <h3>{{ el.title }}</h3>
             <p>{{ el.desc }}</p>
             <div class="bottom">
-                <span>{{ el.price }}$</span>
-                <button>Shop now<img src="/img/add-to-basket.svg" :alt="el.title"></button>
+                        <span>{{ el.price }}$</span>
+            <button @click="addToBasket(el)">Shop now<img src="/img/add-to-basket.svg" :alt="el.title"></button>
             </div>
         </div>
     </div>
@@ -16,6 +16,7 @@
 import axios from 'axios'
 
 export default {
+    props: ['addToBasket'],
     data() {
         return {
             items: []
@@ -73,12 +74,31 @@ export default {
     color: #216E5B;
 }
 
-.items .item .bottom img {
+.items .item .bottom button img {
+    width: 20px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+.items .item .bottom button:hover {
+    transform: scale(1.15);
+}  
+
+
+.items .item .bottom button {
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: transform 500ms ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #216E5B;
+    font-size: 16px;
+    transition: transform 0.5s ease;
 }
 
-.items .item .bottom img:hover {
-    transform: scale(1.3);
+.items .item .bottom button img {
+    width: 22px;
+    height: auto;
 }
 </style>
