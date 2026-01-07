@@ -28,7 +28,7 @@
             <h3>{{ el.title }}</h3>
             <span>{{ el.price }}$</span>
                </div>
-               <button>Checkout</button>
+               <RouterLink to="/order"><button>Checkout</button></RouterLink>
             </div>
         </div>
     </header>

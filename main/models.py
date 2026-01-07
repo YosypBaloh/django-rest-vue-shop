@@ -9,3 +9,16 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Order (models.Model):
+    name = models.CharField('First name', max_length=200)
+    surname = models.CharField('Last name', max_length=200)
+    email = models.CharField('E-mail', max_length=200)
+    phone = models.CharField('Mobile number', max_length=200)
+    basket = models.TextField('Ordered items')
+
+    
+    def __str__(self):
+        return self.title + ' ' + self.surname + ' (' + self.phone + ')'
+
+
