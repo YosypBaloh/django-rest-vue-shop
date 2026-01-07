@@ -19,6 +19,6 @@ class Order (models.Model):
 
     
     def __str__(self):
-        return self.title + ' ' + self.surname + ' (' + self.phone + ')'
+        return self.name + ' ' + self.surname + ' (' + self.phone + ')'
 
 
