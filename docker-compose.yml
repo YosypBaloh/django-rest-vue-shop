@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # --- BACKEND (Django) ---
+  backend:
+    build: .
+    container_name: webshop_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+
+  # --- FRONTEND (Vue.js) ---
+  frontend:
+    build: ./public      
+    container_name: webshop_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./public:/app    
+      - /app/node_modules 
